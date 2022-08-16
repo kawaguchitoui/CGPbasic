@@ -1,0 +1,80 @@
+2の10乗は 1024
+pythonは 6 文字
+リストlの要素数は 5
+sorted list→ [5, 4, 3, 2]
+sorted list→ [5, 4, 3, 2]
+mapのxの値は 3000
+unsorted map
+ {'x': 3000, 'y': 2000}
+sorted map
+ ['y', 'x']
+Does 'x' exsist in map?→ True
+set→ {1, 2, 3, 4, 5}
+積集合→ {3, 4, 5}
+和集合→ {1, 2, 3, 4, 5, 6, 7}
+差集合→ {1, 2}
+SOSO
+
+chiken
+wine
+ice
+
+GoodMorning
+GoodAfternoon
+GoodNight
+
+{'entry': 'salada', 'drink': 'beer', 'dessert': 'ice'}
+sashimi
+('chiken', 'tenpura')
+{'drink': 'beer', 'dessert': 'ice'}
+
+Hello
+sing
+cry
+Hello
+
+{'a': 2, 's': 2, 'd': 1, 'f': 1, 'g': 1, 't': 2, 'r': 2, 'e': 8}
+{'a': 2, 's': 2, 'd': 1, 'f': 1, 'g': 1, 't': 2, 'r': 2, 'e': 8}
+{'a': 2, 's': 2, 'd': 1, 'f': 1, 'g': 1, 't': 2, 'r': 2, 'e': 8}
+defaultdict(<class 'int'>, {'a': 2, 's': 2, 'd': 1, 'f': 1, 'g': 1, 't': 2, 'r': 2, 'e': 8})
+
+Hello,World!
+I am Mike. Hello.
+run!
+Good bye.
+I am Doraemon. Hello.
+auto run(number is 12345678)!
+Good bye.
+
+talk
+run
+fly
+
+<__main__.main.<locals>.PersonA object at 0x7fb4cee7ab20>
+私は20歳の太郎です
+
+0.5
+
+qasdfr
+dfghjn
+uytfdrftg
+qa
+sd
+fr
+
+d
+fg
+hj
+n
+
+uy
+tf
+dr
+ft
+g
+
+Hi, Mike.
+How are you?
+Have a good day!
+A 1
+B 2

@@ -1,0 +1,72 @@
+2の10乗は1024
+pythonは6文字
+PYTHONは6文字
+リストLの要素数は5
+list→5 4 3 2 
+配列lの要素数は5
+配列l→5 4 3 2 1 
+mapのxの値は3000
+sorted map
+y:2000
+x:3000
+Does 'x' exsist in map?→True
+set→1 2 3 4 5 
+積集合→3 4 5 
+和集合→1 2 3 4 5 6 7 
+差集合→1 2 
+SOSO
+
+chiken
+wine
+ice
+
+Hello
+sing
+cry
+Hello
+
+a:2
+d:1
+e:8
+f:1
+g:1
+r:2
+s:2
+t:2
+I am Mike. Hello.
+run!
+Good bye.
+I am Doraemon. Hello.
+auto run(number is 12345678)!
+Good bye.
+
+talk
+run
+fly
+
+0
+
+qasdfr
+
+dfghjn
+
+uytfdrftg
+qa
+sd
+fr
+
+
+df
+gh
+jn
+
+
+uy
+tf
+dr
+ft
+g
+
+NAME COUNT
+A 1
+B 2
