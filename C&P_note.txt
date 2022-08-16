@@ -35,3 +35,5 @@ printf(“%f”, ans);
 
 char *argv[];
 argv[n]：argvのn番目の文字「列」
+
+git
