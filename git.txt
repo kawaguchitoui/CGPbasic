@@ -1,0 +1,185 @@
+gitの初期設定
+git config --global user.name ユーザーネーム
+git config --global user.email メアド
+git config --global core.editor "atom --wait"
+
+gitの初期設定を確認する
+git config user.name
+git config user.email
+git config core.editor
+
+ローカルリポジトリの作成
+git init
+
+変更したファイル(ディレクトリ)をワークツリーからステージングエリアにアップする
+git add
+
+ステージングエリアからリポジトリにアップする
+git commit
+
+現在の変更状況を確認する
+git status
+
+リポジトリへのコミット歴を確認する
+git log
+1行で表示させる
+git log --oneline
+ファイルの差分を表示させる
+git log -p ファイル名(ファイル名を指定するとそのファイルのみの差分が表示される)
+最新のコミットからN個だけ表示させる
+git log -n N
+
+ワークツリーとステージングエリアの変更差分
+、または、git addする前の変更差分を確認する
+git diff
+
+ステージングエリアとリポジトリの変更差分を確認する
+git diff HEAD
+
+git addした後の変更差分を確認する
+git add --staged
+
+ローカルリポジトリをリモートリポジトリに登録する
+git remote add origin URL(URLをoriginというリモート名で登録する)
+
+ローカルリポジトリをリモートリポジトリに送信する
+git push origin ブランチ名
+
+コミット済みファイルを残しつつ、バージョン管理から外す
+git rm --cached ファイル名
+
+コミット済みファイル(ディレクトリ)を削除し、バージョン管理からも外す
+git rm ファイル名
+git rm -r ディレクトリ名
+
+ファイル名を変更し、ステージに追加したい時
+git mv 旧ファイル名　新ファイル名
+
+ワークツリーでの変更を取り消す
+git checkout ファイル名
+git checkout ディレクトリ名
+git checkout -- .
+
+ステージした変更を取り消す
+git reset HEAD ファイル名
+git reset HEAD ディレクトリ名
+git reset HEAD .
+
+直前のコミットをやり直す
+git commit --amend
+
+履歴を整えつつ、変更履歴を統合する(Githubにプッシュしたものに対して行ってはいけない)
+git rebase ブランチ名
+
+直前N個のコミットをやり直す
+①git rebase -i HEAD~N
+②修正したいコミットを「pick」から「edit」に変更してエディタを閉じる
+③ファイルを修正
+④git add→git commit --amend→git rebase --continue
+
+コミットの順番を変える(コミットを消す)
+①git rebase -i HEAD~N
+②コミットの順番を変える(コミットを消す)
+
+コミットをまとめる
+①git rebase -i HEAD~N
+②いらないコミットを「pick」から「squash」に変更してエディタを閉じる
+③またエディタが立ち上がるが、閉じる
+
+コミットを分割する
+①git rebase -i HEAD~N
+②分割したいコミットを「pick」から「edit」に変更してエディタを閉じる
+③git reset HEAD^
+④git add→git commitを繰り返す
+⑤git rebase --continue
+
+リモート名を表示する
+git remote
+git remote -v(対応するURLも表示させる)
+
+リモートリポジトリからローカルリポジトリに情報を取得する
+git fetch origin
+
+リモートリポジトリからローカルリポジトリに取得した情報をワークツリーに反映させる
+git merge origin/ブランチ名
+
+fetch+merge(基本的にpullは使わない)
+git pull origin ブランチ名
+
+リモート名の変更
+git remote rename 旧リモート名 新リモート名
+
+リモート名の削除
+git remote rm リモート名
+
+HEADは今自分がいるブランチを指し示している
+ブランチは最新コミットファイルを指し示している
+
+ブランチを新規追加
+git branch ブランチ名
+
+ブランチ一覧を表示
+git branch
+git branch -a
+
+ブランチを切り替える
+git checkout ブランチ名
+
+ブランチの新規作成+移動
+git checkout -b ブランチ名
+
+今作業中のブランチ名を変更したい時
+git branch -m 変更後のブランチ名
+
+ブランチ名の削除
+git branch -d ブランチ名
+
+ブランチ名の強制削除
+git branch -D ブランチ名
+
+Github flow
+①新しいブランチの作成
+②ファイルを変更する
+③git add→git commit→git push origin 新しいブランチ
+④Githubに移り、「Pull request」タブ→「New pull request」ボタン→「compare」を「新しいブランチ」に変更→「Create pull request」ボタン→「Create pull request」ボタン→「Reviewer」からレビューしてほしい人を選択
+⑤承認されれば、「Merge pull request」ボタン→「Confirm merge」ボタン→「Delete branch」
+⑥ターミナルに戻り、新しいブランチを削除する
+
+プルリクエストレビューの流れ
+①「Pull request」タブ→「Files changed」タブ
+②修正してほしい行があればそこにカーソルを合わせて「+」ボタン→詳細を入力→「Add single comment」
+③問題なければ「Review changes」ボタン→「Approve」にチェック→「Submit review」
+
+注釈付きタグを作成する
+git tag -a タグ名　-m "注釈"
+
+軽量版タグを作成する
+git tag タグ名
+git tag タグ名　コミット名(後からタグ付けできる)
+
+タグのデータを表示する
+git show タグ名
+
+タグ一覧を表示する
+git tag
+git tag -l ""(ダブルクォーテーションのなかに入れた文字列が入っているタグのみ表示される)
+
+タグをリモートリポジトリに送信する
+git push origin タグ名
+git push origin --tags(タグを一斉に送信できる)
+
+作業中なのでコミットしたくないが、別のブランチで作業しないといけなくなり、元の作業を一時保存したい
+git stash
+
+一時保存した作業を確認する
+git stash list
+
+一時保存した作業を復元する
+git stash apply
+git stash apply --index(git add済みの一時保存した作業を復元する)
+git stash apply スタッシュ名(特定の作業を復元する、スタッシュ名はgit stash listで確認できる)
+
+一時保存した作業を削除する
+git stash drop
+git stash drop スタッシュ名(特定の作業のみ削除)
+git stash clear(すべて削除)
