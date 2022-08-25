@@ -1,0 +1,126 @@
+select 列名1 as 新列名1,列名2 as 新列名2...
+  from テーブル名
+    where 条件1 and(or) 条件2...;
+
+n1~n5のいずれかに合致すればという条件式
+...where 列名 in (n1,n2,n3,n4,n5);
+
+n1~n5のいずれかにも合致しなければという条件式
+...where 列名 not in (n1,n2,n3,n4,n5);
+
+重複を除きたい
+select distinct(列名)...
+
+20~30歳の生物のデータを取得
+...where age between 20 and 30;
+
+「あ」から始まる名前のデータを取得
+...where name like 'あ%';（%は任意の文字列を表す）
+...where name like 'あ_';（_は任意の1文字を表す）
+...where name like '__あ';
+%や_を通常の文字として扱いたい時はそれらの直前に「\」をつけるか、「[]」で囲む
+
+取得するデータの行数をNに制限
+...limit N;
+
+N行目からデータの取得を行いたい
+... offset N-1;
+
+昇順（少ない順）ソート
+...order by 〇〇;
+
+降順（多い順）ソート
+...order by 〇〇 desc;
+
+列名2が〇〇である列名1の行数をcountで数える
+select count(列名1)
+  from テーブル名
+    where 列名2='〇〇';
+
+列名1が同じデータをまとめてそれがいくつあるかも表示する
+select 列名1,列名2,...,count(列名x)
+  from テーブル名
+    group by 列名1,列名2,...;
+
+テーブル結合（結合条件に合致しないデータは省かれる）
+select 新テーブル名1.列名2,新テーブル名2.列名4...
+  from テーブル名1 as 新テーブル名1
+    inner join テーブル名2 as 新テーブル名2
+      on 結合条件（例：新テーブル名1.id=新テーブル名2.id）;
+
+テーブル結合（テーブル1のデータは全て残し、結合条件に合致しないテーブル2のデータにはnull値を与える）
+select 新テーブル名1.列名2,新テーブル名2.列名4...
+  from テーブル名1 as 新テーブル名1
+    left join テーブル名2 as 新テーブル名2
+      on 結合条件
+
+テーブル結合（テーブル2のデータは全て残し、結合条件に合致しないテーブル1のデータにはnull値を与える）
+select 新テーブル名1.列名2,新テーブル名2.列名4...
+  from テーブル名1 as 新テーブル名1
+    right join テーブル名2 as 新テーブル名2
+      on 結合条件
+
+テーブル結合（全てのデータを残し、結合条件に合致しないデータにはnull値を与える）
+elect 新テーブル名1.列名2,新テーブル名2.列名4...
+  from テーブル名1 as 新テーブル名1
+    outer join テーブル名2 as 新テーブル名2
+      on 結合条件
+
+グルーピングしたデータに対し、さらに特定の条件でデータを抽出したければ、wwhereではなくhavingを使う
+（SQLコマンドの実行順from,join→where→group by→having→select→order→limit,offset）
+...
+having 条件;
+
+書き方
+SELECT ...
+FROM ...
+  JOIN ...
+    ON ...
+  WHERE ...
+  GROUP BY ...
+  HAVING ...
+  ORDER BY ...
+  LIMIT ... OFFSET ...;
+
+length関数、substring関数、case式
+
+四捨五入したい時
+round(列名,n{少数第n位まで表示する})
+
+データ挿入
+insert into テーブル名 (列名1,列名2,...)
+values(値1,値2,...);
+
+データ更新
+update テーブル名
+set 列名1=値1,列名2=列名2,...
+where 条件;
+
+データ削除
+delete from テーブル名
+where 条件;
+
+テーブル作成
+create table テーブル名(
+  列名1 データ型 default デフォルトの値,
+  列名2 データ型 default デフォルトの値,
+  列名3 データ型 identity(初期値,増分),
+  .
+  .
+  .
+)
+
+列の追加
+alter table テーブル名
+add 列名 データ型 default デフォルトの値;
+
+列の削除
+alter table テーブル名
+drop 列名;
+
+テーブルのリネーム
+alter table 旧テーブル名
+rename to 新テーブル名
+
+テーブルの削除
+drop table if exists テーブル名;
