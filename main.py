@@ -312,7 +312,29 @@ def main():
     for row in reader:
       print(row['NAME'],row['COUNT'])
 
+      
+      
 if __name__=='__main__':
   main()
+  
+  
+  
+"""testpy-testpy2 -test.py
+         -text    -hello.txt"""
+import os
+
+current_file_path=os.path.abspath(__file__)        #test.py
+super_dir=os.path.dirname(current_file_path)       #testpy2
+superior_dir=os.path.dirname(super_dir)            #testpy
+text_dir=os.path.join(superior_dir,'text')         #text
+hello_file_path=os.path.join(text_dir,'hello.txt') #hello.txt
+
+
+
+"""独自例外"""
+class OriginalError(Exception):
+  pass
+
+raise OriginalError('メッセージ')
 
 """git"""
