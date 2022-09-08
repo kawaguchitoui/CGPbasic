@@ -337,4 +337,37 @@ class OriginalError(Exception):
 
 raise OriginalError('メッセージ')
 
+
+
+"""pytest"""
+"""基本"""
+def add_num(num1, num2):
+  return num1+num2
+
+def test_add_num():
+  result = add_num(1,2)
+  assert result == 3
+  
+"""クラスを使う"""
+#class TestFunc(object):
+#  def setup_method(self):
+#    テストを行う前に行いたい処理（インスタンス生成など）があれば、ここに書く
+    
+#   @pytest.mark.skip(reason='') テストをスキップしたい場合
+#   def test_func(self)
+#　   処理
+
+#   def test_find_document_raise():
+#     with pytest.raises(console.NoDocumentError):
+#       処理
+
+
+
+"""
+sample.pyの__name__は、sample
+hello.pyの__name__は、hello
+
+ただし、python sample(hello).pyで実行した場合、__name__は、main
+"""
+
 """git"""
