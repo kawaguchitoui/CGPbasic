@@ -11,6 +11,9 @@ git config core.editor
 ローカルリポジトリの作成
 git init
 
+git init取り消し
+rm -rf .git
+
 変更したファイル(ディレクトリ)をワークツリーからステージングエリアにアップする
 git add
 
