@@ -7,6 +7,8 @@
 #include <vector>
 #include <set>
 #define _CRT_SECURE_NO_WARNINGS //sprintf関数、sscanf関数
+#include <time.h>
+#include <unistd.h> //sleep
 
 
 
@@ -447,6 +449,22 @@ int main(){
       fclose(csv_file2);
     }
   }
+  
+  
+  
+  //日付や時刻
+  time_t t = time(NULL);
+  char now[20];
+  char today[20];
+
+  strftime(now, sizeof(now), "%H:%M", localtime(&t));
+  printf("%s\n", now);
+
+  strftime(today, sizeof(today), "%Y/%m/%d", localtime(&t));
+  printf("%s\n", today);
+
+  sleep(1);
+  printf("%ld\n", t); //エポックタイム
 
   return 0;
 }
