@@ -12,6 +12,7 @@
 
 //import
 #include "lesson_package/talk/human.cpp"
+#include <math.h>
 
 
 
@@ -332,6 +333,10 @@ int main(){
   sing();
   cry();
   printf("\n");
+  
+  theta = M_PI;
+  double ans = sin(theta)*sin(theta) + cos(theta)*cos(theta);
+  printf(“%f”, ans)
 
 
 
@@ -452,5 +457,34 @@ void menu(std::string entry,std::string drink,std::string dessert){
   std::cout<<drink<<std::endl;
   std::cout<<dessert<<std::endl;
 }
+
+
+
+/* int x;
+int* p;
+p = &x;
+&x：xのアドレス
+*(&x)：xの値
+p：xのアドレス
+*p：xの値
+
+char x[];
+char* p;
+p = x;
+&x[n]（0の省略不可）：xのn番目のアドレス（x + nでも可）
+*(&x[n])（0の省略不可）：xのn番目の値（ *(x + n) でも可 ）
+p + n：xのn番目のアドレス
+*(p + n)：xのn番目の値
+
+char型配列以外の配列では、終端を表す値を入れるのではなく、別途長さを受け渡しする形にすることが多いですね。→「リストの要素数」
+char型配列とstring型は同じように扱えますね。
+
+ビット演算（c/c++、python共通）
+論理積：&
+論理和：|
+排他的論理和：^
+
+char *argv[];
+argv[n]：argvのn番目の文字「列」 */
 
 //git
