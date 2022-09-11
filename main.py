@@ -316,6 +316,27 @@ def main():
     reader=csv.DictReader(csv_file)
     for row in reader:
       print(row['NAME'],row['COUNT'])
+  
+  
+  
+  """日付や時刻"""
+  import datetime
+
+  now=datetime.datetime.now()
+  print(now.strftime("%H:%M"))
+
+  today=datetime.date.today()
+  print(today.strftime("%y/%m/%d"))
+
+  d=datetime.timedelta(days=365)
+  print((today-d).strftime("%y/%m/%d"))
+
+  t=datetime.time(hour=1,minute=2,second=3)
+  print(t.strftime("%H_%M_%S"))
+
+  import time
+  time.sleep(1)
+  print(time.time()) #エポックタイム
 
       
       
