@@ -41,14 +41,14 @@ def main():
   print("リストlの要素数は",len(l))
   l.insert(0,0) """インデックス番号、　追加したい要素"""
   l.append(6)
-  l.pop(0)
-  l.pop()
-  l.remove(1)
+  l.pop(0) """インデックス番号"""
+  l.pop() """インデックス番号を指定しなければ、一番後ろが消える"""
+  l.remove(1) """消したい要素"""
 
-  l.sort(reverse=True)
+  l.sort(reverse=True) """l=l.sort()は不可"""
   print("sorted list→",l)
   l.sort(reverse=False)
-  print("sorted list→",sorted(l, reverse=True))
+  print("sorted list→",sorted(l, reverse=True)) """l=sorted(l)は可"""
 
 
   """辞書"""
@@ -59,7 +59,7 @@ def main():
   print("mapのxの値は",d['x'])
 
   print("unsorted map\n",d)
-  print("sorted map\n",sorted(d,key=d.get,reverse=False))
+  print("sorted map\n",sorted(d,key=d.get,reverse=False)) """d.sort()は不可、d.get('x')だとxが存在する場合は対応する値3000が返り、xが存在しない場合はNoneが返る。None以外の値を返したい場合は、第二引数にxが存在しない場合に返すデフォルト値を指定する。"""
 
   d.pop('x')
   """またはdel d['x']"""
