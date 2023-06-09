@@ -124,3 +124,14 @@ rename to 新テーブル名
 
 テーブルの削除
 drop table if exists テーブル名;
+
+case式
+select (列名,)
+case when 条件 then 値
+when 条件 then 値
+.
+.
+.
+else 値
+end as 新しい列名
+from テーブル名
