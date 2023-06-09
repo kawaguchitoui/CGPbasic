@@ -68,7 +68,7 @@ git reset HEAD ファイル名
 git reset HEAD ディレクトリ名
 git reset HEAD .
 
-直前のコミットをやり直す
+直前のコミット(まだプッシュしていない)をやり直す
 git commit --amend
 
 履歴を整えつつ、変更履歴を統合する(Githubにプッシュしたものに対して行ってはいけない)
